@@ -1,5 +1,5 @@
 const { Sequelize } = require("sequelize");
-const logger = require("./log");
+//const logger = require("./log");
 
 const db = new Sequelize(
   process.env.NODE_DBSCHEMA,

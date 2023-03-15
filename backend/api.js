@@ -89,6 +89,7 @@ const { sampleUsers, samplePostings, sampleVotes } = require("./util/sampledata"
       if (isDbReady) {
         await db.sync({ force: true });
         // load sample users
+        console.log(sampleUsers)
         for (const user of sampleUsers) {
           await User.create({
             id: user.id,
@@ -119,6 +120,7 @@ const { sampleUsers, samplePostings, sampleVotes } = require("./util/sampledata"
           });
         }
       } else {
+        console.log("Jjj")
         throw new Error("Database connection could not be established");
       }
     }
