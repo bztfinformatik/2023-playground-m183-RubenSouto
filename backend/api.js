@@ -15,7 +15,7 @@ const { sleep } = require("./util/helper");
 const routes = require("./routes/main");
 
 // importing log utilities
-const logger = require("./util/log");
+//const logger = require("./util/log");
 
 const api = express();
 
@@ -48,11 +48,11 @@ api.use((req, res, next) => {
 
 // error handler sends error message as json
 api.use((err, req, res, next) => {
-  logger.error(err.message, {
-    errno: err.errno,
-    error: err,
-  });
-  res.status(err.statusCode).json({
+  // logger.error(err.message, {
+  //   errno: err.errno,
+  //   error: err,
+  // });
+  res.status(500).json({
     errorMessage: err.message,
   });
 });
@@ -120,7 +120,6 @@ const { sampleUsers, samplePostings, sampleVotes } = require("./util/sampledata"
           });
         }
       } else {
-        console.log("Jjj")
         throw new Error("Database connection could not be established");
       }
     }
