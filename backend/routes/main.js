@@ -2,6 +2,7 @@
 const express = require('express');
 // import controller functions
 const miscCtrl = require('../controllers/misc');
+const userCtrl = require('../controllers/user');
 
 const router = express.Router();
 
@@ -10,7 +11,7 @@ const router = express.Router();
 router.get('/hw', miscCtrl.getHelloWorld);
 router.post('/pm', miscCtrl.postMessage);
 router.get("/", miscCtrl.default);
-router.post("/user", miscCtrl.postUser);
+router.post("/user", userCtrl.signup);
 
 
 module.exports = router;
