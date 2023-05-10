@@ -7,11 +7,11 @@ const userCtrl = require('../controllers/user');
 const router = express.Router();
 
 
-
 router.get('/hw', miscCtrl.getHelloWorld);
 router.post('/pm', miscCtrl.postMessage);
 router.get("/", miscCtrl.default);
-router.post("/user", userCtrl.signup);
+router.post("/users", userCtrl.signup);
+router.post("/login", userCtrl.login);
 
 
 module.exports = router;
